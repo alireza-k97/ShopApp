@@ -204,6 +204,9 @@
   .top-4 {
     top: calc(var(--spacing) * 4);
   }
+  .top-5 {
+    top: calc(var(--spacing) * 5);
+  }
   .top-12 {
     top: calc(var(--spacing) * 12);
   }
@@ -221,6 +224,9 @@
   }
   .top-48 {
     top: calc(var(--spacing) * 48);
+  }
+  .top-52 {
+    top: calc(var(--spacing) * 52);
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
@@ -249,6 +255,9 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .my-8 {
+    margin-block: calc(var(--spacing) * 8);
+  }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
@@ -266,6 +275,9 @@
   }
   .table {
     display: table;
+  }
+  .h-96 {
+    height: calc(var(--spacing) * 96);
   }
   .w-full {
     width: 100%;
@@ -339,6 +351,21 @@
   .border-gray-400 {
     border-color: var(--color-gray-400);
   }
+  .bg-\[url\=\"\"\] {
+    background-color: url="";
+  }
+  .bg-\[url\=\"\.\.\"\] {
+    background-color: url="..";
+  }
+  .bg-\[url\=\"\.\/\"\] {
+    background-color: url="./";
+  }
+  .bg-\[url\=\] {
+    background-color: url=;
+  }
+  .bg-\[url\] {
+    background-color: url;
+  }
   .bg-black {
     background-color: var(--color-black);
   }
@@ -356,6 +383,114 @@
   }
   .bg-white {
     background-color: var(--color-white);
+  }
+  .bg-\[url\(\"\"\)\] {
+    background-image: url("");
+  }
+  .bg-\[url\(\"\.\.\/\"\)\] {
+    background-image: url("../");
+  }
+  .bg-\[url\(\'\'\)\] {
+    background-image: url('');
+  }
+  .bg-\[url\(\'\.\.\/\'\)\] {
+    background-image: url('../');
+  }
+  .bg-\[url\(\'\.\.\/a\'\)\] {
+    background-image: url('../a');
+  }
+  .bg-\[url\(\'\.\.\/as\'\)\] {
+    background-image: url('../as');
+  }
+  .bg-\[url\(\'\.\.\/assist\'\)\] {
+    background-image: url('../assist');
+  }
+  .bg-\[url\(\'\.\.\/assist\/\'\)\] {
+    background-image: url('../assist/');
+  }
+  .bg-\[url\(\'\.\.\/assist\/image\'\)\] {
+    background-image: url('../assist/image');
+  }
+  .bg-\[url\(\'\.\.\/assist\/image\/\'\)\] {
+    background-image: url('../assist/image/');
+  }
+  .bg-\[url\(\'\.\.\/assist\/image\/ma\'\)\] {
+    background-image: url('../assist/image/ma');
+  }
+  .bg-\[url\(\'\.\.\/assist\/image\/main\'\)\] {
+    background-image: url('../assist/image/main');
+  }
+  .bg-\[url\(\'\.\.\/assist\/image\/mainBa\'\)\] {
+    background-image: url('../assist/image/mainBa');
+  }
+  .bg-\[url\(\'\.\.\/assist\/image\/mainBanner\'\)\] {
+    background-image: url('../assist/image/mainBanner');
+  }
+  .bg-\[url\(\'\.\.\/images\'\)\] {
+    background-image: url('../images');
+  }
+  .bg-\[url\(\'\.\.\/images\/\'\)\] {
+    background-image: url('../images/');
+  }
+  .bg-\[url\(\'\.\.\/images\/ba\'\)\] {
+    background-image: url('../images/ba');
+  }
+  .bg-\[url\(\'\.\.\/images\/images\/mainBanner\.png\'\)\] {
+    background-image: url('../images/images/mainBanner.png');
+  }
+  .bg-\[url\(\'\.\.\/images\/images\/mainBanner\.png\.png\'\)\] {
+    background-image: url('../images/images/mainBanner.png.png');
+  }
+  .bg-\[url\(\'\.\.\/images\/main\'\)\] {
+    background-image: url('../images/main');
+  }
+  .bg-\[url\(\'\.\.\/images\/mainBanne\'\)\] {
+    background-image: url('../images/mainBanne');
+  }
+  .bg-\[url\(\'\.\.\/images\/mainBanner\'\)\] {
+    background-image: url('../images/mainBanner');
+  }
+  .bg-\[url\(\'\.\.\/images\/mainBanner\.png\'\)\] {
+    background-image: url('../images/mainBanner.png');
+  }
+  .bg-\[url\(\'\.\.\/images\/mainb\'\)\] {
+    background-image: url('../images/mainb');
+  }
+  .bg-\[url\(\'\.\.\/images\/mainba\'\)\] {
+    background-image: url('../images/mainba');
+  }
+  .bg-\[url\(\'\.\.\/هئشلثس\'\)\] {
+    background-image: url('../هئشلثس');
+  }
+  .bg-\[url\(\'\.\/\'\)\] {
+    background-image: url('./');
+  }
+  .bg-\[url\(\'\.\/\/\'\)\] {
+    background-image: url('.//');
+  }
+  .bg-\[url\(\'\/a\'\)\] {
+    background-image: url('/a');
+  }
+  .bg-\[url\(\'\/image\/mainBanner\'\)\] {
+    background-image: url('/image/mainBanner');
+  }
+  .bg-\[url\(\'\/images\/bg\.jpg\'\)\] {
+    background-image: url('/images/bg.jpg');
+  }
+  .bg-\[url\(\'\/images\/bg\.png\'\)\] {
+    background-image: url('/images/bg.png');
+  }
+  .bg-\[url\(\'image\/mainBanner\'\)\] {
+    background-image: url('image/mainBanner');
+  }
+  .bg-\[url\(\)\] {
+    background-image: url();
+  }
+  .bg-cover {
+    background-size: cover;
+  }
+  .bg-center {
+    background-position: center;
   }
   .p-1 {
     padding: calc(var(--spacing) * 1);
