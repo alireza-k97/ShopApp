@@ -1,15 +1,9 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'IranSansRegular';
-  src: url('/assets/fonts/fonnts.com-IRAN_Sans_Regular.ttf') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
 
 @font-face {
   font-family: 'IranSansBold';
-  src: url('/assets/fonts/fonnts.com-IRAN_Sans_Bold.ttf') format('woff2');
-  font-weight: normal;
+  src: url('/assets/fonts/fonnts.com-IRAN_Sans_Bold.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
 }
