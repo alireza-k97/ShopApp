@@ -13,25 +13,33 @@
 
 </head>
 <body dir="rtl" class="mx-4 font-iransans">
-  <div id="banner" class="flex justify-between items-center bg-black text-white p-3 mt-2 rounded-xl">
-    <button id="closeBanner" class="text-xl ml-4 cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
-    <div class="flex justify-center items-center gap-4">
+  <div id="banner" class="flex flex-col md:flex-row justify-between items-center bg-black text-white p-3 mt-2 rounded-xl gap-4 md:gap-0">
+    <div class="flex justify-between items-center w-full md:w-auto order-1 md:order-none">
+      <button id="closeBanner" class="text-xl cursor-pointer md:ml-4">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-center items-center md:gap-4 text-center order-2 md:order-none text-[14px] md:text-[16px]">
       <h1>70%</h1>
-      <p class="text-center text-sm font-bold">بلک فرایدی شروع شد</p>
+      <p class="text-sm font-bold">بلک فرایدی شروع شد</p>
       <span>;</span>
-      <p class="text-center text-sm">بهترین تخفیف ها منتظر شماست.</p>
+      <p class="text-sm">بهترین تخفیف ها منتظر شماست.</p>
       <h1>70%</h1>
     </div>
-    <button class="bg-black text-white hover:border-purple-500 hover:text-purple-500 px-2 py-1 border-2 cursor-pointer rounded-md ml-4">
-      پیشنهاد</button>
+
+    <button class="bg-black text-white hover:border-purple-500 hover:text-purple-500 px-2 py-1 border-2 cursor-pointer rounded-md ml-4 order-3 md:order-none w-32">
+      پیشنهاد
+    </button>
   </div>
- 
-  <header class="flex justify-between items-center bg-white p-4 shadow">
-    <div class="flex justify-center items-center">
+
+  
+  <header class="flex flex-col md:flex-row justify-between gap-4 items-center bg-white p-4 shadow">
+    <div class="flex flex-col md:flex-row justify-center gap-4 items-center w-full md:w-1/2">
       <div class="text-2xl font-bold text-gray-800">
         <img src="../assets/images/logo.svg" alt="logo">
       </div>
-      <div class="flex-1 mx-4">
+      <div class="flex-1 mx-4 w-full">
         <input
           type="text"
           placeholder="جستجو کنید..."
@@ -39,7 +47,7 @@
         />
       </div>
     </div>
-    <div class="flex justify-center gap-1">
+    <div class="flex justify-center gap-2">
       <button class="text-xs border border-gray-300 rounded p-1"><i class="fa-solid fa-user"></i>حساب کاربری</button>
       <button class="text-2xl border border-gray-300 rounded p-1"><i class="fa-regular fa-heart"></i></button>
       <button class="bg-purple-600 text-2xl border border-gray-300 rounded p-1"><i class="fa-solid fa-cart-shopping"></i></button>
@@ -78,18 +86,18 @@
     <button class="bg-purple-600 cursor-pointer hover:bg-purple-700 text-xs border border-gray-300 rounded p-1 whitespace-nowrap">ارتباط با پشتیبانی</button>
   </nav>
   <section>
-    <div id="bg-banner" class="bg-[url('/assets/images/mainBanner.jpg')] bg-cover bg-center h-96 flex items-center justify-start px-16 rounded-xl">
-      <div class="p-8 rounded flex flex-col justify-center items-center text-white max-w-md">
-        <h1 class="text-4xl whitespace-nowrap font-bold mb-4">انواع تجهیزات گیمینگ</h1>
-        <p class="mb-4">با بیش از 7 سال سابقه فروش اینترنتی</p>
-        <button class="flex items-center justify-center gap-2 bg-white hover:bg-purple-200  text-purple-500 font-bold text-xs py-2 px-4 rounded cursor-pointer">
+    <div id="bg-banner" class="bg-[url('/assets/images/mainBanner.jpg')] bg-cover bg-center h-96 flex items-center justify-start px-4 md:px-16 rounded-xl">
+      <div class="p-4 md:p-8 rounded flex flex-col justify-center items-center text-white w-full md:max-w-md bg-transparent">
+        <h1 class="text-xl md:text-4xl font-bold mb-2 md:mb-4 whitespace-nowrap">انواع تجهیزات گیمینگ</h1>
+        <p class="text-xs md:text-base mb-2 md:mb-4">با بیش از 7 سال سابقه فروش اینترنتی</p>
+        <button class="flex items-center justify-center gap-2 bg-white hover:bg-purple-200 text-purple-500 font-bold text-xs py-2 px-4 rounded cursor-pointer">
           <p>مشاهده محصولات</p>
-          <img class="w-6 h-6" src="../assets/images/dirLeft.svg" alt="">
+          <img class="w-4 h-4 md:w-6 md:h-6" src="../assets/images/dirLeft.svg" alt="">
         </button>
       </div>
     </div>
-    <div id="gema-type" class="flex justify-center items-center gap-4 mt-4">
-      <div class="bg-[url('/assets/images/Frame-22.png')] bg-cover bg-center w-1/3 h-44 px-8 rounded-xl flex items-center justify-start">
+    <div id="gema-type" class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4">
+      <div class="bg-[url('/assets/images/Frame-22.png')] bg-cover bg-center w-full md:w-1/3 h-44 px-8 rounded-xl flex items-center justify-start">
         <div class="mr-4 text-white text-right">
           <h1 class="text-2xl font-bold">انواع کنسول</h1>
           <div class="flex justify-center items-center gap-2">
@@ -98,7 +106,7 @@
           </div>
         </div>
       </div>
-      <div class="bg-[url('/assets/images/Frame-21.png')] bg-cover bg-center w-1/3  h-44 px-8 rounded-xl flex items-center justify-start">
+      <div class="bg-[url('/assets/images/Frame-21.png')] bg-cover bg-center w-full md:w-1/3  h-44 px-8 rounded-xl flex items-center justify-start">
         <div class="mr-4 text-white text-right">
           <h1 class="text-2xl font-bold">انواع سیستم</h1>
           <div class="flex justify-center items-center gap-2">
@@ -107,7 +115,7 @@
           </div>
         </div>
       </div>
-      <div class="bg-[url('/assets/images/Frame-20.png')] bg-cover bg-center w-1/3 h-44 px-8 rounded-xl flex items-center justify-start">
+      <div class="bg-[url('/assets/images/Frame-20.png')] bg-cover bg-center w-full md:w-1/3 h-44 px-8 rounded-xl flex items-center justify-start">
         <div class="mr-4 text-white text-right">
           <h1 class="text-2xl font-bold">انواع صندلی</h1>
           <div class="flex justify-center items-center gap-2">
@@ -171,15 +179,15 @@
 <!-- offer -->
     <div id="offer" class="mt-8 bg-[url('/assets/images/OFFER.png')] bg-cover bg-center w-full h-96 flex items-center justify-start px-4 rounded-xl text-xs gap-4">
       <div class="bg-transparent w-1/2 h-80 flex flex-col justify-evenly items-center">
-        <h1 class="text-white font-bold text-4xl">پیشنهاد</h1>
-        <h1 class="text-white font-bold text-4xl">ویژه امروز</h1>
+        <h1 class="text-white font-bold text-xl md:text-4xl">پیشنهاد</h1>
+        <h1 class="text-white font-bold text-xl md:text-4xl">ویژه امروز</h1>
         <div class="flex items-center">
           <div id="seconds" class="bg-white rounded-r-lg text-purple-500 px-2 py-1 text-lg font-mono">00</div>
           <div id="minutes" class="bg-white border-x-2 border-purple-500 text-purple-500 px-2 py-1 text-lg font-mono">00</div>
           <div id="hours" class="bg-white rounded-l-lg text-purple-500 px-2 py-1 text-lg font-mono">00</div>
         </div>
         <button class="flex items-center justify-center gap-2 text-white font-bold text-xs py-2 px-4 rounded cursor-pointer">
-          <p>مشاهده همه</p>
+          <p class="whitespace-nowrap">مشاهده همه</p>
           <img class="w-6 h-6" src="../assets/images/dirpurple.svg" alt="">
         </button>
       </div>
@@ -516,8 +524,8 @@
       </div>
     </div>
 <!-- بنر فروش اقسلطی -->
-    <div id="Banner-forosh" class="flex justify-center items-center mt-10 gap-4">
-      <div class="bg-[url('/assets/images/phonesBanner.png')] bg-cover bg-center w-1/2 h-56 flex items-center justify-start rounded-xl">
+    <div id="Banner-forosh" class="flex flex-col md:flex-row justify-center items-center mt-10 gap-4">
+      <div class="bg-[url('/assets/images/phonesBanner.png')] bg-cover bg-center w-full md:w-1/2 h-56 flex items-center justify-start rounded-xl">
         <div class="p-8 rounded flex flex-col justify-center items-center text-white max-w-md">
           <h1 class="text-4xl whitespace-nowrap font-bold mb-4">خرید اقساطی</h1>
           <p class="mb-4">شما هم می توانید آیفون بخرید!</p>
@@ -527,7 +535,7 @@
           </button>
       </div>
       </div>
-      <div class="bg-[url('/assets/images/speakersbanner.png')] bg-cover bg-center w-1/2 h-56 flex items-center justify-start rounded-xl">
+      <div class="bg-[url('/assets/images/speakersbanner.png')] bg-cover bg-center w-full md:w-1/2 h-56 flex items-center justify-start rounded-xl">
         <div class="p-8 rounded flex flex-col justify-center items-center text-white max-w-md gap-8">
           <h1 class="text-2xl font-bold mb-4">انواع اسپیکرهای بلوتوثی</h1>
           <button class="flex items-center justify-center gap-2 bg-white hover:bg-purple-200  text-purple-500 font-bold text-xs py-2 px-4 rounded cursor-pointer">
@@ -723,7 +731,7 @@
     </div>
      
      <!-- user comment -->
-      <div class="mt-8"> 
+      <div class="mt-8 md:text[16px] text-xs"> 
         <div class="flex justify-between items-center">
           <div class="flex justify-start items-center">
             <img src="../assets/images/smile.svg" alt="smili svg">
@@ -828,11 +836,11 @@
       </div>
       <!-- offBanner -->
       <div class="my-16">
-        <div class="bg-[url('/assets/images/off.png')] bg-cover bg-center w-full h-32 flex justify-between items-center px-8">
-          <img src="../assets/images/persent.svg" alt="persent-picture">
+        <div class="bg-[url('/assets/images/off.png')] bg-cover bg-center w-auto rounded-xl md:w-full h-32 flex justify-between items-center px-8  text-xs md:text-[16px] gap-4">
+          <img class="w-10 md:w-auto" src="../assets/images/persent.svg" alt="persent-picture">
           <h1>با استفاده از اسن کد تخفیف ارسال خرید اولت رایگان می شود !</h1>
           <button class="flex items-center justify-center gap-2 bg-white hover:bg-purple-200 font-bold text-xs py-2 px-4 rounded cursor-pointer">
-            <p class="text-purple-500">کلیک کنید</p>
+            <p class="text-purple-500 whitespace-nowrap ">کلیک کنید</p>
             <img class="w-6 h-6" src="../assets/images/massage.svg" alt="">
           </button>
         </div>
@@ -844,7 +852,7 @@
             <p class="font-bold text-purple-500 text-xl">سوالات</p>
             <p class="font-bold text-xl">متداول</p>
           </div>
-          <div class="flex flex-col justify-center items-center">
+          <div class="flex flex-col justify-center items-center  text-xs md:text-[16px]">
             <div class="q-item flex flex-col justify-center items-center w-full">
               <div class="q-question flex justify-between items-center bg-white p-8 my-2 shadow-xl border border-gray-300 w-full cursor-pointer"
               data-answer="بله، امکان خرید حضوری وجود دارد و می‌توانید به شعب مراجعه کنید.">
@@ -881,9 +889,9 @@
 
   </section>
   <footer>
-    <div class="mt-16 bg-[url('/assets/images/OFFER.png')] bg-cover bg-center w-full p-8 rounded-xl text-xl gap-4">
-      <div class="grid grid-cols-4 w-full gap-4" >
-        <div>
+    <div class="mt-16 bg-[url('/assets/images/OFFER.png')] bg-cover bg-center w-full p-8 rounded-xl gap-4 ">
+      <div class="grid xl:grid-cols-4 md:grid-cols-2 w-full gap-4  text-xs md:text-[16px]" >
+        <div class="flex justify-center items-center">
           <img src="../assets/images/location.png" alt="location">
         </div>
         <div class="flex flex-col text-purple-200 items-center gap-4 py-4">
@@ -946,24 +954,24 @@
         </div>
         
       </div>
-      <div class="bg-white w-full py-4 my-4 flex justify-center items-center rounded-xl text-[14px]">
-        <div class="flex justify-center items-center gap-4 border-l-2 border-gray-300 px-8">
+      <div class="bg-white w-full py-4 my-4 flex flex-col xl:flex-row justify-center items-center gap-8 rounded-xl text-[14px]">
+        <div class="flex  justify-center items-center gap-4 xl:border-l-2 border-b-2 border-gray-300 px-8">
           <img src="../assets/images/call.svg" alt="call-svg">
           <div class="text-center">
             <h1>021-20501400</h1>
             <p class="text-gray-500">پشتیبانی 24 ساعته</p>
           </div>
         </div>
-        <div class="flex justify-center items-center gap-4 border-l-2 border-gray-300 px-8">
+        <div class="flex justify-center items-center gap-4 xl:border-l-2 border-b-2 border-gray-300 px-8">
           <img src="../assets/images/laocatin.svg" alt="call-svg">
           <div class="text-center">
             <h1>آدرس</h1>
             <p class="text-gray-500">تهران،ولیعصر،ساختمان نبوی</p>
           </div>
         </div>
-        <div class="flex justify-center items-center gap-4 px-8 w-1/2">
-          <input class="w-3/4 bg-blue-100 p-2 focus:outline-none focus:ring-2 focus:ring-purple-400 rounded-xl" type="text" name="addMember" id="add-member" placeholder="عضویت در خبر نامه ...">
-          <button class="bg-purple-400 hover:bg-purple-600 rounded-xl p-2 px-8 text-p[18px] font-bold">ثبت ایمیل</button>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4 px-8 w-full md:w-1/2">
+          <input class="md:w-3/4 w-full bg-blue-100 p-2 focus:outline-none focus:ring-2 focus:ring-purple-400 rounded-xl" type="text" name="addMember" id="add-member" placeholder="عضویت در خبر نامه ...">
+          <button class="bg-purple-400 hover:bg-purple-600 rounded-xl p-2 px-8 text-p[18px] font-bold whitespace-nowrap">ثبت ایمیل</button>
         </div>
         
 
