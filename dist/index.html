@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
 </head>
-<body dir="rtl" class="mx-4 font-IranSans">
+<body dir="rtl" class="mx-4 font-iransans">
   <div id="banner" class="flex justify-between items-center bg-black text-white p-3 mt-2 rounded-xl">
     <button id="closeBanner" class="text-xl ml-4 cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
     <div class="flex justify-center items-center gap-4">
@@ -16,7 +22,7 @@
       <p class="text-center text-sm">بهترین تخفیف ها منتظر شماست.</p>
       <h1>70%</h1>
     </div>
-    <button class="bg-black text-white hover:border-red-600 px-2 py-1 border-2 cursor-pointer rounded-md ml-4">
+    <button class="bg-black text-white hover:border-purple-500 hover:text-purple-500 px-2 py-1 border-2 cursor-pointer rounded-md ml-4">
       پیشنهاد</button>
   </div>
  
@@ -29,7 +35,7 @@
         <input
           type="text"
           placeholder="جستجو کنید..."
-          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
         />
       </div>
     </div>
@@ -46,12 +52,28 @@
     </button>
 
     <div id="menu" class="hidden flex flex-col items-center md:flex md:flex-row md:items-center gap-4 md:gap-4 absolute md:static top-52 left-0 w-full bg-white md:bg-transparent shadow md:shadow-none p-4 md:p-0">
-      <a href="#" class="hover:text-yellow-400 text-xs whitespace-nowrap"><i class="fa-solid fa-bars"></i> دسته بندی محصولات</a>
-      <a href="#" class="hover:text-yellow-400 text-xs whitespace-nowrap"><i class="fa-solid fa-percent"></i> تخفیف ها</a>
-      <a href="#" class="hover:text-yellow-400 text-xs whitespace-nowrap">پرفروش ترین ها</a>
-      <a href="#" class="hover:text-yellow-400 text-xs whitespace-nowrap">پیگیری سفارشات</a>
-      <a href="#" class="hover:text-yellow-400 text-xs whitespace-nowrap">سوالات متداول</a>
-      <a href="#" class="hover:text-yellow-400 text-xs whitespace-nowrap">ارتباط با ما</a>
+      <div class="relative group">
+      <a href="#" class="text-xs whitespace-nowrap"><i class="fa-solid fa-bars"></i> دسته بندی محصولات</a>
+      
+      <!-- مگامنو -->
+      <div class="hidden group-hover:block absolute top-full right-0 w-[200px]  bg-purple-400 text-white rounded-xl shadow-lg border p-8 z-50">
+       <div class="flex flex-col justify-center gap-2">
+        <a href="#" class="rounded-xl hover:text-purple-800">لپ تاپ</a>
+        <a href="#" class="rounded-xl hover:text-purple-800">موبایل</a>
+        <a href="#" class="rounded-xl hover:text-purple-800">هدفون</a>
+        <a href="#" class="rounded-xl hover:text-purple-800">ایرپاد</a>
+        <a href="#" class="rounded-xl hover:text-purple-800">کیس</a>
+        <a href="#" class="rounded-xl hover:text-purple-800">مانیتور</a>
+       </div>
+      </div>
+      
+
+    </div>
+      <a href="#" class="text-xs whitespace-nowrap"><i class="fa-solid fa-percent"></i> تخفیف ها</a>
+      <a href="#" class="text-xs whitespace-nowrap">پرفروش ترین ها</a>
+      <a href="#" class="text-xs whitespace-nowrap">پیگیری سفارشات</a>
+      <a href="#" class="text-xs whitespace-nowrap">سوالات متداول</a>
+      <a href="#" class="text-xs whitespace-nowrap">ارتباط با ما</a>
     </div>
     <button class="bg-purple-600 cursor-pointer hover:bg-purple-700 text-xs border border-gray-300 rounded p-1 whitespace-nowrap">ارتباط با پشتیبانی</button>
   </nav>
@@ -95,6 +117,7 @@
         </div>
       </div>
     </div>
+    <!-- Category -->
     <div class="mt-8">
       <div class="flex justify-between items-center">
         <div class="flex justify-start items-center">
@@ -102,46 +125,57 @@
           <p class="font-bold text-purple-500 text-xl">دسته بندی</p>
           <p class="font-bold text-xl">محصولات</p>
         </div>
-        <div class="flex justify-center items-center gap-0.5">
-          <button class="cursor-pointer"><img src="../assets/images/dirRight.svg" alt="back"></button>
-          <button class="cursor-pointer"><img src="../assets/images/dirLeft.svg" alt="go"></button>
+        <div class="custom-buttons flex justify-center items-center gap-0.5">
+          <button class="custom-prev cursor-pointer"><img src="../assets/images/dirRight.svg" alt="back"></button>
+          <button class="custom-next cursor-pointer"><img src="../assets/images/dirLeft.svg" alt="go"></button>
         </div>
       </div>
-      <div id="type" class="mt-4 flex justify-center items-center gap-4">
-        <div class="bg-white flex flex-col justify-between items-center shadow w-60 h-48">
-          <img class="w-fit" src="../assets/images/phone.png" alt="phone-photo">
-          <h3>موبایل</h3>
+      <div class="swiper swiper-category">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-60 p-4 gap-2">
+            <img class="w-fit" src="../assets/images/phone.png" alt="phone-photo">
+            <h3>موبایل</h3>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-60 p-4 gap-2">
+            <img class="w-fit" src="../assets/images/airpad.png" alt="phone-photo">
+            <h3>ایرپاد</h3>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-60 p-4 gap-2">
+            <img class="w-fit" src="../assets/images/loptop.png" alt="phone-photo">
+            <h3>هدفون</h3>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-60 p-4 gap-2">
+            <img class="w-fit" src="../assets/images/headphone.png" alt="phone-photo">
+            <h3>هدفون</h3>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-60 p-4 gap-2">
+            <img src="../assets/images/console.png" alt="phone-photo">
+            <h3>وسایل گیمینگ</h3>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-60 p-4 gap-2">
+            <img src="../assets/images/watch.png" alt="phone-photo">
+            <h3>ساعت هوشمند</h3>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-60 p-4 gap-2">
+            <img src="../assets/images/monitor.png" alt="phone-photo">
+            <h3>مانیتور</h3>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-60 p-4 gap-2">
+            <img src="../assets/images/case.png" alt="phone-photo">
+            <h3>کیس</h3>
+          </div>
         </div>
-        <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-48">
-          <img class="w-fit" src="../assets/images/airpad.png" alt="phone-photo">
-          <h3>ایرپاد</h3>
-        </div>
-        <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-48">
-          <img src="../assets/images/console.png" alt="phone-photo">
-          <h3>وسایل گیمینگ</h3>
-        </div>
-        <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-48">
-          <img src="../assets/images/watch.png" alt="phone-photo">
-          <h3>ساعت هوشمند</h3>
-        </div>
-        <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-48">
-          <img src="../assets/images/monitor.png" alt="phone-photo">
-          <h3>مانیتور</h3>
-        </div>
-        <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-48">
-          <img src="../assets/images/case.png" alt="phone-photo">
-          <h3>کیس</h3>
-        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
 <!-- offer -->
     <div id="offer" class="mt-8 bg-[url('/assets/images/OFFER.png')] bg-cover bg-center w-full h-96 flex items-center justify-start px-4 rounded-xl text-xs gap-4">
-      <div class="bg-transparent w-60 h-80 flex flex-col justify-evenly items-center">
+      <div class="bg-transparent w-1/2 h-80 flex flex-col justify-evenly items-center">
         <h1 class="text-white font-bold text-4xl">پیشنهاد</h1>
         <h1 class="text-white font-bold text-4xl">ویژه امروز</h1>
         <div class="flex items-center">
           <div id="seconds" class="bg-white rounded-r-lg text-purple-500 px-2 py-1 text-lg font-mono">00</div>
-          <div id="minutes" class="bg-white border text-purple-500 px-2 py-1 text-lg font-mono">00</div>
+          <div id="minutes" class="bg-white border-x-2 border-purple-500 text-purple-500 px-2 py-1 text-lg font-mono">00</div>
           <div id="hours" class="bg-white rounded-l-lg text-purple-500 px-2 py-1 text-lg font-mono">00</div>
         </div>
         <button class="flex items-center justify-center gap-2 text-white font-bold text-xs py-2 px-4 rounded cursor-pointer">
@@ -149,151 +183,158 @@
           <img class="w-6 h-6" src="../assets/images/dirpurple.svg" alt="">
         </button>
       </div>
-    
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/case.png" alt="phone-photo">
-        <h1 class="text-xl font-bold">کیس</h1>
-        <div class="flex justify-between gap-8">
-            <p>تنها 2 عدد در انبار موجود است</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
+      <div class="swiper swiper-offer">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl p-1">
+            <img src="../assets/images/case.png" alt="phone-photo">
+            <h1 class="text-xl font-bold">کیس</h1>
+            <div class="flex justify-between items-center p-2 gap-8">
+                <p>تنها 2 عدد در انبار موجود است</p> 
+              <div class="flex">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 my-4">
+              <span class="bg-red-600 px-4 rounded-xl">20%</span>
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+                <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+            <img src="../assets/images/loptop.png" alt="loptop-photo">
+            <h1 class="text-xl font-bold">لبتاب گیمینگ msi</h1>
+            <div class="flex justify-between items-center p-2 gap-8">
+                <p>ارسال رایگان برای امروز</p> 
+              <div class="flex">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 my-4">
+              <span class="bg-red-600 px-4 rounded-xl">20%</span>
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+                <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+            <img src="../assets/images/headphone.png" alt="headphone-photo">
+            <h1 class="text-xl font-bold">هدفون</h1>
+            <div class="flex justify-between items-center p-2 gap-8">
+                <p>تنها 2 عدد در انبار موجود است</p> 
+              <div class="flex">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 my-4">
+              <span class="bg-red-600 px-4 rounded-xl">20%</span>
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+                <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+            <img src="../assets/images/monitor.png" alt="monitor-picture">
+            <h1 class="text-xl font-bold">مانیتور گیمینگ</h1>
+            <div class="flex justify-between items-center p-2 gap-8">
+                <p>تنها 2 عدد در انبار موجود است</p> 
+              <div class="flex">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 my-4">
+              <span class="bg-red-600 px-4 rounded-xl">20%</span>
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+                <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+            <img src="../assets/images/watch.png" alt="watch-photo">
+            <h1 class="text-xl font-bold">ساعت هوشمند apple</h1>
+            <div class="flex justify-between items-center p-2 gap-8">
+                <p>ارسال رایگان برای امروز</p> 
+              <div class="flex">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 my-4">
+              <span class="bg-red-600 px-4 rounded-xl">20%</span>
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+                <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+            <img src="../assets/images/airpad.png" alt="airpad-photo">
+            <h1 class="text-xl font-bold">ایرپاد herios</h1>
+            <div class="flex justify-between items-center p-2 gap-8">
+                <p>ارسال رایگان برای امروز</p> 
+              <div class="flex justify-center items-center">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 my-4">
+              <span class="bg-red-600 px-4 rounded-xl">20%</span>
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+                <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+            <img src="../assets/images/phone.png" alt="-photo">
+            <h1 class="text-xl font-bold">گوشی موبایل iphone</h1>
+            <div class="flex justify-between items-center p-2 gap-8">
+                <p>ارسال رایگان برای امروز</p> 
+              <div class="flex">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 my-4">
+              <span class="bg-red-600 px-4 rounded-xl">20%</span>
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+                <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+            <img src="../assets/images/console.png" alt="console">
+            <h1 class="text-xl font-bold">دسته بازی xbox one</h1>
+            <div class="flex justify-between items-center p-2 gap-8">
+                <p>ارسال رایگان برای امروز</p> 
+              <div class="flex">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 my-4">
+              <span class="bg-red-600 px-4 rounded-xl">20%</span>
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+                <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/loptop.png" alt="loptop-photo">
-        <h1 class="text-xl font-bold">لبتاب گیمینگ msi</h1>
-        <div class="flex justify-between gap-8">
-            <p>ارسال رایگان برای امروز</p> 
-          <div class="flex justify-center items-center">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
-      </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/headphone.png" alt="headphone-photo">
-        <h1 class="text-xl font-bold">هدفون</h1>
-        <div class="flex justify-between gap-8">
-            <p>تنها 2 عدد در انبار موجود است</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
-      </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/monitor.png" alt="monitor-picture">
-        <h1 class="text-xl font-bold">مانیتور گیمینگ</h1>
-        <div class="flex justify-between gap-8">
-            <p>تنها 2 عدد در انبار موجود است</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
-      </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/watch.png" alt="watch-photo">
-        <h1 class="text-xl font-bold">ساعت هوشمند apple</h1>
-        <div class="flex justify-between gap-8">
-            <p>ارسال رایگان برای امروز</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
-      </div>
-       <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/airpad.png" alt="airpad-photo">
-        <h1 class="text-xl font-bold">ایرپاد herios</h1>
-        <div class="flex justify-between gap-8">
-            <p>ارسال رایگان برای امروز</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
-      </div>
-       <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/phone.png" alt="-photo">
-        <h1 class="text-xl font-bold">گوشی موبال iphone</h1>
-        <div class="flex justify-between gap-8">
-            <p>ارسال رایگان برای امروز</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
-      </div>
-       <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/console.png" alt="console">
-        <h1 class="text-xl font-bold">دسته بازی xbox one</h1>
-        <div class="flex justify-between gap-8">
-            <p>ارسال رایگان برای امروز</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
-      </div>
+      
     </div>
 <!-- محصولات پر بازدید -->
     <div class="mt-8">
@@ -310,151 +351,168 @@
           </button>
         </div>
       </div>
-      <div id="viwe-up" class="mt-4 px-8 flex justify-center items-center gap-4">
-        <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/case.png" alt="phone-photo">
-        <h1 class="text-xl font-bold">کیس</h1>
-        <div class="flex justify-between gap-8">
-            <p>تنها 2 عدد در انبار موجود است</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
+      <div class="swiper swiper-moreviwe">
+        <div id="viwe-up" class="swiper-wrapper">
+          <div class="swiper-slide bg-white flex flex-col justify-between items-center gap-1 p-2 shadow w-60 h-80 rounded-xl">
+            <div>
+              <img src="../assets/images/case.png" alt="phone-photo">   
+            </div>
+            <div class="flex flex-col justify-center items-center">
+              <h1 class="text-xl font-bold">کیس</h1>
+              <div class="flex justify-between items-center  gap-8">
+                  <p>تنها 2 عدد در انبار موجود است</p> 
+                <div class="flex">
+                  <p>4.7</p>
+                  <img src="../assets/images/star.svg" alt="star-picture">
+                </div>
+              </div>
+              <div class="flex justify-between items-center gap-8 my-4">
+                <span class="bg-red-600 px-4 rounded-xl">20%</span>
+                <div class="flex items-center justify-center gap-2">
+                  <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+                  <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="swiper-slide bg-white flex flex-col justify-between items-center gap-1 p-2 shadow w-60 h-80 rounded-xl">
+          <div>
+            <img src="../assets/images/loptop.png" alt="loptop-photo">
+          </div>
+          <div class="flex flex-col justify-center items-center">
+            <h1 class="text-xl font-bold">لبتاپ</h1>
+            <div class="flex justify-between items-center gap-8">
+              <p>تنها 2 عدد در انبار موجود است</p> 
+              <div class="flex">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 my-4">
+              <span class="bg-red-600 px-4 rounded-xl">20%</span>
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+                <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+        <div class="swiper-slide bg-white flex flex-col items-center gap-1 p-2 shadow w-60 h-80 rounded-xl">
+          <div>
+            <img src="../assets/images/headphone.png" alt="headphone-photo">
+          </div>
+          <div class="flex flex-col justify-center items-center">
+            <h1 class="text-xl font-bold">هدفون</h1>
+            <div class="flex justify-between items-center gap-8">
+              <p>تنها 2 عدد در انبار موجود است</p> 
+              <div class="flex">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 my-4">
+              <span class="bg-red-600 px-4 rounded-xl">20%</span>
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+                <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/loptop.png" alt="loptop-photo">
-        <h1 class="text-xl font-bold">لبتاب گیمینگ msi</h1>
-        <div class="flex justify-between gap-8">
-            <p>ارسال رایگان برای امروز</p> 
-          <div class="flex justify-center items-center">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
+        <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+          <img src="../assets/images/monitor.png" alt="monitor-picture">
+          <h1 class="text-xl font-bold">مانیتور گیمینگ</h1>
+          <div class="flex justify-between items-center p-4 gap-8">
+              <p>تنها 2 عدد در انبار موجود است</p> 
+            <div class="flex">
+              <p>4.7</p>
+              <img src="../assets/images/star.svg" alt="star-picture">
+            </div>
+          </div>
+          <div class="flex justify-between items-center gap-8 my-4">
+            <span class="bg-red-600 px-4 rounded-xl">20%</span>
+            <div class="flex items-center justify-center gap-2">
+              <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+              <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+            </div>
           </div>
         </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+        <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+          <img src="../assets/images/watch.png" alt="watch-photo">
+          <h1 class="text-xl font-bold">ساعت هوشمند apple</h1>
+          <div class="flex justify-between items-center p-4 gap-8">
+              <p>ارسال رایگان برای امروز</p> 
+            <div class="flex">
+              <p>4.7</p>
+              <img src="../assets/images/star.svg" alt="star-picture">
+            </div>
+          </div>
+          <div class="flex justify-between items-center gap-8 my-4">
+            <span class="bg-red-600 px-4 rounded-xl">20%</span>
+            <div class="flex items-center justify-center gap-2">
+              <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+              <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/headphone.png" alt="headphone-photo">
-        <h1 class="text-xl font-bold">هدفون</h1>
-        <div class="flex justify-between gap-8">
-            <p>تنها 2 عدد در انبار موجود است</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
+        <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+          <img src="../assets/images/airpad.png" alt="airpad-photo">
+          <h1 class="text-xl font-bold">ایرپاد herios</h1>
+          <div class="flex justify-between items-center p-4 gap-8">
+              <p>ارسال رایگان برای امروز</p> 
+            <div class="flex">
+              <p>4.7</p>
+              <img src="../assets/images/star.svg" alt="star-picture">
+            </div>
+          </div>
+          <div class="flex justify-between items-center gap-8 my-4">
+            <span class="bg-red-600 px-4 rounded-xl">20%</span>
+            <div class="flex items-center justify-center gap-2">
+              <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+              <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+            </div>
           </div>
         </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+        <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+          <img src="../assets/images/phone.png" alt="-photo">
+          <h1 class="text-xl font-bold">گوشی موبایل iphone</h1>
+          <div class="flex justify-between items-center p-4 gap-8">
+              <p>ارسال رایگان برای امروز</p> 
+            <div class="flex">
+              <p>4.7</p>
+              <img src="../assets/images/star.svg" alt="star-picture">
+            </div>
+          </div>
+          <div class="flex justify-between items-center gap-8 my-4">
+            <span class="bg-red-600 px-4 rounded-xl">20%</span>
+            <div class="flex items-center justify-center gap-2">
+              <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+              <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/monitor.png" alt="monitor-picture">
-        <h1 class="text-xl font-bold">مانیتور گیمینگ</h1>
-        <div class="flex justify-between gap-8">
-            <p>تنها 2 عدد در انبار موجود است</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
+        <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+          <img src="../assets/images/console.png" alt="console">
+          <h1 class="text-xl font-bold">دسته بازی xbox one</h1>
+          <div class="flex justify-between items-center p-4 gap-8">
+              <p>ارسال رایگان برای امروز</p> 
+            <div class="flex">
+              <p>4.7</p>
+              <img src="../assets/images/star.svg" alt="star-picture">
+            </div>
+          </div>
+          <div class="flex justify-between items-center gap-8 my-4">
+            <span class="bg-red-600 px-4 rounded-xl">20%</span>
+            <div class="flex items-center justify-center gap-2">
+              <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
+              <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
+            </div>
           </div>
         </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
         </div>
-      </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/watch.png" alt="watch-photo">
-        <h1 class="text-xl font-bold">ساعت هوشمند apple</h1>
-        <div class="flex justify-between gap-8">
-            <p>ارسال رایگان برای امروز</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
-      </div>
-       <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/airpad.png" alt="airpad-photo">
-        <h1 class="text-xl font-bold">ایرپاد herios</h1>
-        <div class="flex justify-between gap-8">
-            <p>ارسال رایگان برای امروز</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
-      </div>
-       <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/phone.png" alt="-photo">
-        <h1 class="text-xl font-bold">گوشی موبال iphone</h1>
-        <div class="flex justify-between gap-8">
-            <p>ارسال رایگان برای امروز</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
-      </div>
-       <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
-        <img src="../assets/images/console.png" alt="console">
-        <h1 class="text-xl font-bold">دسته بازی xbox one</h1>
-        <div class="flex justify-between gap-8">
-            <p>ارسال رایگان برای امروز</p> 
-          <div class="flex">
-            <p>4.7</p>
-            <img src="../assets/images/star.svg" alt="star-picture">
-          </div>
-        </div>
-        <div class="flex justify-between items-center gap-8 my-4">
-          <span class="bg-red-600 px-4 rounded-xl">20%</span>
-          <div class="flex items-center justify-center gap-2">
-            <span class="text-xs line-through text-gray-400">۹۵۰,۰۰۰ تومان</span>
-            <span class="text-xs font-bold text-gray-800">۳۵۵,۰۰۰ تومان</span>
-          </div>
-        </div>
-      </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
     </div>
 <!-- بنر فروش اقسلطی -->
@@ -494,11 +552,12 @@
           </button>
         </div>
       </div>
-      <div id="viwe-up" class="mt-4 px-8 flex justify-center items-center gap-4">
-        <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+      <div class="swiper swiper-best">
+      <div id="viwe-up" class="swiper-wrapper">
+        <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
         <img src="../assets/images/case.png" alt="phone-photo">
         <h1 class="text-xl font-bold">کیس</h1>
-        <div class="flex justify-between gap-8">
+        <div class="flex justify-between items-center p-4 gap-8">
             <p>تنها 2 عدد در انبار موجود است</p> 
           <div class="flex">
             <p>4.7</p>
@@ -513,10 +572,10 @@
           </div>
         </div>
       </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+      <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
         <img src="../assets/images/loptop.png" alt="loptop-photo">
         <h1 class="text-xl font-bold">لبتاب گیمینگ msi</h1>
-        <div class="flex justify-between gap-8">
+        <div class="flex justify-between items-center p-4 gap-8">
             <p>ارسال رایگان برای امروز</p> 
           <div class="flex justify-center items-center">
             <p>4.7</p>
@@ -531,10 +590,10 @@
           </div>
         </div>
       </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+      <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
         <img src="../assets/images/headphone.png" alt="headphone-photo">
         <h1 class="text-xl font-bold">هدفون</h1>
-        <div class="flex justify-between gap-8">
+        <div class="flex justify-between items-center p-4 gap-8">
             <p>تنها 2 عدد در انبار موجود است</p> 
           <div class="flex">
             <p>4.7</p>
@@ -549,10 +608,10 @@
           </div>
         </div>
       </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+      <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
         <img src="../assets/images/monitor.png" alt="monitor-picture">
         <h1 class="text-xl font-bold">مانیتور گیمینگ</h1>
-        <div class="flex justify-between gap-8">
+        <div class="flex justify-between items-center p-4 gap-8">
             <p>تنها 2 عدد در انبار موجود است</p> 
           <div class="flex">
             <p>4.7</p>
@@ -567,10 +626,10 @@
           </div>
         </div>
       </div>
-      <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+      <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
         <img src="../assets/images/watch.png" alt="watch-photo">
         <h1 class="text-xl font-bold">ساعت هوشمند apple</h1>
-        <div class="flex justify-between gap-8">
+        <div class="flex justify-between items-center p-4 gap-8">
             <p>ارسال رایگان برای امروز</p> 
           <div class="flex">
             <p>4.7</p>
@@ -585,10 +644,10 @@
           </div>
         </div>
       </div>
-       <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+       <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
         <img src="../assets/images/airpad.png" alt="airpad-photo">
         <h1 class="text-xl font-bold">ایرپاد herios</h1>
-        <div class="flex justify-between gap-8">
+        <div class="flex justify-between items-center p-4 gap-8">
             <p>ارسال رایگان برای امروز</p> 
           <div class="flex">
             <p>4.7</p>
@@ -603,10 +662,10 @@
           </div>
         </div>
       </div>
-       <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+       <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
         <img src="../assets/images/phone.png" alt="-photo">
-        <h1 class="text-xl font-bold">گوشی موبال iphone</h1>
-        <div class="flex justify-between gap-8">
+        <h1 class="text-xl font-bold">گوشی موبایل iphone</h1>
+        <div class="flex justify-between items-center p-4 gap-8">
             <p>ارسال رایگان برای امروز</p> 
           <div class="flex">
             <p>4.7</p>
@@ -621,10 +680,10 @@
           </div>
         </div>
       </div>
-       <div class="bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
+       <div class="swiper-slide bg-white flex flex-col items-center justify-between shadow w-60 h-80 rounded-xl">
         <img src="../assets/images/console.png" alt="console">
         <h1 class="text-xl font-bold">دسته بازی xbox one</h1>
-        <div class="flex justify-between gap-8">
+        <div class="flex justify-between items-center p-4 gap-8">
             <p>ارسال رایگان برای امروز</p> 
           <div class="flex">
             <p>4.7</p>
@@ -639,18 +698,30 @@
           </div>
         </div>
       </div>
-      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    </div>
     </div>
     <!-- company logo -->
-     <div class="mt-12 flex justify-between items-center bg-white p-4 shadow gap-4">
-      <img src="../assets/images/anker.png" alt="anker-logo">
-      <img src="../assets/images/tsco.png" alt="tsco-logo">
-      <img src="../assets/images/sony.png" alt="sony-logo">
-      <img src="../assets/images/samsung.png" alt="samsung-logo">
-      <img src="../assets/images/apple.png" alt="apple-logo">
-      <img src="../assets/images/mi.png" alt="mi-logo">
-      <img src="../assets/images/qcy.png" alt="qcy-logo">
-     </div>
+    <div class=" border-2 border-gray-100 shadow-xl p-4 my-16">
+       <div class="swiper swiper-company">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide flex justify-center items-center h-24"><img src="../assets/images/anker.png" alt="anker-logo"></div>
+          <div class="swiper-slide flex justify-center items-center h-24"><img src="../assets/images/tsco.png" alt="tsco-logo"></div>
+          <div class="swiper-slide flex justify-center items-center h-24"><img src="../assets/images/sony.png" alt="sony-logo"></div>
+          <div class="swiper-slide flex justify-center items-center h-24"><img src="../assets/images/samsung.png" alt="samsung-logo"></div>
+          <div class="swiper-slide flex justify-center items-center h-24"><img src="../assets/images/apple.png" alt="apple-logo"></div>
+          <div class="swiper-slide flex justify-center items-center h-24"><img src="../assets/images/mi.png" alt="mi-logo"></div>
+          <div class="swiper-slide flex justify-center items-center h-24"><img src="../assets/images/qcy.png" alt="qcy-logo"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+     
      <!-- user comment -->
       <div class="mt-8"> 
         <div class="flex justify-between items-center">
@@ -659,13 +730,14 @@
             <p class="font-bold text-purple-500 text-xl">نظرات</p>
             <p class="font-bold text-xl">کاربران</p>
           </div>
-          <div class="flex justify-center items-center gap-0.5">
-            <button class="cursor-pointer"><img src="../assets/images/dirRight.svg" alt="back"></button>
-            <button class="cursor-pointer"><img src="../assets/images/dirLeft.svg" alt="go"></button>
+          <div class="button-custom flex justify-center items-center gap-0.5">
+            <button class="custom-prev cursor-pointer"><img src="../assets/images/dirRight.svg" alt="back"></button>
+            <button class="custom-prev cursor-pointer"><img src="../assets/images/dirLeft.svg" alt="go"></button>
           </div>
         </div>
-        <div class="mt-4 flex justify-center items-center gap-4">
-          <div class="shadow w-1/3 h-48 p-4">
+        <div class="swiper swiper-comment">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide shadow w-1/3 h-48 p-4">
             <div class="flex justify-between items-center">
               <div class="flex justify-center items-center gap-2">
                 <div class="bg-purple-300 p-1 rounded-4xl">
@@ -682,7 +754,7 @@
               <p class="w-fit h-fit"> من هندزفری بی سیم تسکو دارم،خیلی خوبه،شوهرم مغازه داره و خودش این مارک رو برام آورد ،میگفت خیلی خوبه ... سلام مدل هندزفریتون چیه؟</p>
             </div>
           </div>
-          <div class="shadow w-1/3 h-48 p-4">
+          <div class="swiper-slide shadow w-1/3 h-48 p-4">
             <div class="flex justify-between items-center">
               <div class="flex justify-center items-center gap-2">
                 <div class="bg-purple-300 p-1 rounded-4xl">
@@ -699,7 +771,7 @@
               <p> من هندزفری بی سیم تسکو دارم،خیلی خوبه،شوهرم مغازه داره و خودش این مارک رو برام آورد ،میگفت خیلی خوبه ... سلام مدل هندزفریتون چیه؟</p>
             </div>
           </div>
-          <div class="shadow w-1/3 h-48 p-4">
+          <div class="swiper-slide shadow w-1/3 h-48 p-4">
             <div class="flex justify-between items-center">
               <div class="flex justify-center items-center gap-2">
                 <div class="bg-purple-300 p-1 rounded-4xl">
@@ -716,7 +788,42 @@
               <p> من هندزفری بی سیم تسکو دارم،خیلی خوبه،شوهرم مغازه داره و خودش این مارک رو برام آورد ،میگفت خیلی خوبه ... سلام مدل هندزفریتون چیه؟</p>
             </div>
           </div>
-          
+          <div class="swiper-slide shadow w-1/3 h-48 p-4">
+            <div class="flex justify-between items-center">
+              <div class="flex justify-center items-center gap-2">
+                <div class="bg-purple-300 p-1 rounded-4xl">
+                  <img src="../assets/images/user.svg" alt="profile-picture">
+                </div>
+                <p>لیلا محمدی</p>
+              </div>
+              <div class="flex">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="mt-4">
+              <p> من هندزفری بی سیم تسکو دارم،خیلی خوبه،شوهرم مغازه داره و خودش این مارک رو برام آورد ،میگفت خیلی خوبه ... سلام مدل هندزفریتون چیه؟</p>
+            </div>
+          </div>
+          <div class="swiper-slide shadow w-1/3 h-48 p-4">
+            <div class="flex justify-between items-center">
+              <div class="flex justify-center items-center gap-2">
+                <div class="bg-purple-300 p-1 rounded-4xl">
+                  <img src="../assets/images/user.svg" alt="profile-picture">
+                </div>
+                <p>لیلا محمدی</p>
+              </div>
+              <div class="flex">
+                <p>4.7</p>
+                <img src="../assets/images/star.svg" alt="star-picture">
+              </div>
+            </div>
+            <div class="mt-4">
+              <p> من هندزفری بی سیم تسکو دارم،خیلی خوبه،شوهرم مغازه داره و خودش این مارک رو برام آورد ،میگفت خیلی خوبه ... سلام مدل هندزفریتون چیه؟</p>
+            </div>
+          </div>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
       <!-- offBanner -->
@@ -737,24 +844,39 @@
             <p class="font-bold text-purple-500 text-xl">سوالات</p>
             <p class="font-bold text-xl">متداول</p>
           </div>
-          <div class=" flex flex-col justify-center items-center">
-            <div class="flex justify-between items-center bg-white p-8 my-2 shadow-xl border border-gray-300 w-full">
-              <h1>آیا امکان خرید وجود دارد؟</h1>
-              <button class="cursor-pointer"><i class="fa-solid fa-chevron-down"></i></button>
+          <div class="flex flex-col justify-center items-center">
+            <div class="q-item flex flex-col justify-center items-center w-full">
+              <div class="q-question flex justify-between items-center bg-white p-8 my-2 shadow-xl border border-gray-300 w-full cursor-pointer"
+              data-answer="بله، امکان خرید حضوری وجود دارد و می‌توانید به شعب مراجعه کنید.">
+                <h1>آیا امکان خرید حضوری وجود دارد؟</h1>
+                <button class="q-btn cursor-pointer">
+                  <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                </button>
+              </div>
             </div>
-            <div class="flex justify-between items-center bg-white p-8 my-2 shadow-xl border border-gray-300 w-full">
-              <h1>آیا امکان تغییر سفارش بعداز ثبت سفارش وجود دارد؟</h1>
-              <button class="cursor-pointer"><i class="fa-solid fa-chevron-down"></i></button>
+          
+            <div class="q-item flex flex-col justify-center items-center w-full">
+              <div class="q-question flex justify-between items-center bg-white p-8 my-2 shadow-xl border border-gray-300 w-full cursor-pointer"
+              data-answer="امکان تغییر سفارش تا قبل از ارسال وجود دارد.">
+                <h1>آیا امکان تغییر سفارش بعداز ثبت سفارش وجود دارد؟</h1>
+                <button class="q-btn cursor-pointer"><i class="fa-solid fa-chevron-down transition-transform duration-300"></i></button>
+              </div>
             </div>
-            <div class="flex justify-between items-center bg-white p-8 my-2 shadow-xl border border-gray-300 w-full">
-              <h1>آیا لغو سفارش پس از ثبت سفارش وجود دارد؟</h1>
-              <button class="cursor-pointer"><i class="fa-solid fa-chevron-down"></i></button>
+            <div class="q-item flex flex-col justify-center items-center w-full">
+              <div class="q-question flex justify-between items-center bg-white p-8 my-2 shadow-xl border border-gray-300 w-full cursor-pointer"
+              data-answer="بله، قبل از ارسال می‌توانید سفارش را لغو کنید.">
+                <h1>آیا لغو سفارش پس از ثبت سفارش وجود دارد؟</h1>
+                <button class="q-btn cursor-pointer"><i class="fa-solid fa-chevron-down transition-transform duration-300"></i></button>
+              </div>
             </div>
-            <div class="flex justify-between items-center bg-white p-8 my-2 shadow-xl border border-gray-300 w-full">
-              <h1>شرایط مرجوعی کالا به چه صورت می باشد؟</h1>
-              <button class="cursor-pointer"><i class="fa-solid fa-chevron-down"></i></button>
-            </div>
-          </div>
+            <div class="q-item flex flex-col justify-center items-center w-full">
+              <div class="q-question flex justify-between items-center bg-white p-8 my-2 shadow-xl border border-gray-300 w-full cursor-pointer"
+              data-answer="کالا باید تا ۷ روز کاری بدون آسیب و با بسته‌بندی اصلی مرجوع شود.">
+                <h1>شرایط مرجوعی کالا به چه صورت می باشد؟</h1>
+                <button class="q-btn cursor-pointer"><i class="fa-solid fa-chevron-down transition-transform duration-300"></i></button>
+              </div>
+            </div> 
+        </div>
       </div>
 
   </section>
@@ -765,9 +887,9 @@
           <img src="../assets/images/location.png" alt="location">
         </div>
         <div class="flex flex-col text-purple-200 items-center gap-4 py-4">
-          <h1 class="text-3xl font-bold">دسترسی سریع</h1>
+          <h1 class="text-2xl font-bold">دسترسی سریع</h1>
           <hr class="w-full border-t-2 border-gray-400">
-          <div class="flex flex-col items-center gap-4 w-full">
+          <div class="flex flex-col items-center text-[14px] gap-4 w-full">
             <div class="flex justify-center gap-2 w-full">
               <a href="#" class="hover:text-purple-800">صفحه خانه</a>
               <span>|</span>
@@ -786,9 +908,9 @@
           </div>
         </div>
         <div class="flex flex-col text-purple-200 items-center gap-4 py-4">
-          <h1 class="text-3xl font-bold">دسته بندی محصولات</h1>
+          <h1 class="text-2xl font-bold">دسته بندی محصولات</h1>
           <hr class="w-full border-t-2 border-gray-400">
-          <div class="flex flex-col items-center gap-4 w-full">
+          <div class="flex flex-col items-center text-[14px] gap-4 w-full">
             <div class="flex justify-center gap-2 w-full">
               <a href="#" class="hover:text-purple-800">گوشی موبایل</a>
               <span>|</span>
@@ -809,10 +931,10 @@
           </div>
         </div>
         <div class="flex flex-col text-purple-200 items-center gap-4 py-4">
-          <h1 class="text-3xl font-bold">نشان های اعتماد</h1>
+          <h1 class="text-2xl font-bold">نشان های اعتماد</h1>
           <hr class="w-full border-t-2 border-gray-400">
           <div class="flex flex-col items-center gap-4 w-full">
-            <div class="flex justify-center gap-2 w-full">
+            <div class="flex justify-center text-[14px] gap-2 w-full">
               <h2>جهت اطمینان روی آنها کلیک کنید.</h2>
             </div>
             <div class="flex justify-center gap-2 w-full">
@@ -824,7 +946,7 @@
         </div>
         
       </div>
-      <div class="bg-white w-full py-4 my-4 flex justify-center items-center rounded-xl">
+      <div class="bg-white w-full py-4 my-4 flex justify-center items-center rounded-xl text-[14px]">
         <div class="flex justify-center items-center gap-4 border-l-2 border-gray-300 px-8">
           <img src="../assets/images/call.svg" alt="call-svg">
           <div class="text-center">
@@ -840,8 +962,8 @@
           </div>
         </div>
         <div class="flex justify-center items-center gap-4 px-8 w-1/2">
-          <input class="w-3/4 bg-blue-100 p-2" type="text" name="addMember" id="add-member" placeholder="عضویت در خبر نامه ...">
-          <button class="bg-purple-400 rounded-xl p-2 text-xl font-bold">ثبت ایمیل</button>
+          <input class="w-3/4 bg-blue-100 p-2 focus:outline-none focus:ring-2 focus:ring-purple-400 rounded-xl" type="text" name="addMember" id="add-member" placeholder="عضویت در خبر نامه ...">
+          <button class="bg-purple-400 hover:bg-purple-600 rounded-xl p-2 px-8 text-p[18px] font-bold">ثبت ایمیل</button>
         </div>
         
 
@@ -853,5 +975,9 @@
 
 
   <script src="../js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+ 
+
 </body>
 </html>
